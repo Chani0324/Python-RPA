@@ -32,13 +32,37 @@ row_title = ws[1] # 1번째 row만 가지고 오기
 
 
 
-row_range = ws[2:ws.max_row] # 2번쨰 줄부터 마지막 줄까지
-for rows in row_range:
-    for cell in rows:
-        # print(cell.value, end=" ")
-        # print(cell.coordinate, end=" ") 
-        xy = coordinate_from_string(cell.coordinate)
-        print(xy, end=" ")
-    print()
+# row_range = ws[2:ws.max_row] # 2번쨰 줄부터 마지막 줄까지
+# for rows in row_range:
+#     for cell in rows:
+#         # print(cell.value, end=" ")
+#         # print(cell.coordinate, end=" ") 
+#         xy = coordinate_from_string(cell.coordinate)
+#         # print(xy, end=" ")
+#         print(xy[0], end="") # A, B, ...
+#         print(xy[1], end=" ") # 1, 2, ...
+#     print()
+
+
+# 전체 rows
+# print(tuple(ws.rows))
+# for row in tuple(ws.rows):
+#     print(row[1].value)
+
+# 전체 coulmns
+# print(tuple(ws.columns))
+# for column in tuple(ws.columns):
+#     print(column[0].value)
+
+# for column in ws.iter_cols(): # 전체 column
+#     print(column[0].value)
+
+# for row in ws.iter_rows(min_row=1, max_row=5, min_col=1, max_col=3): 
+    # print(row[0].value, row[1].value)
+#     print(row)
+
+# for col in ws.iter_cols(min_row=1, max_row=5, min_col=1, max_col=3):
+#     print(col)
+
 
 wb.save("sample.xlsx")
