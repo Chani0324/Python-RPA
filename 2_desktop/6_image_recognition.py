@@ -69,8 +69,6 @@ def find_target(img_file, timeout=30):
         target = pyautogui.locateOnScreen(img_file)
         end = time.time()
         if end - start > timeout:
-            pyautogui.click(target)
-        else:
             break
     return target
 
@@ -80,7 +78,7 @@ def my_click(img_file, timeout=30):
         pyautogui.click(target)
     else:
         print(f"[Timeout {timeout}s Target not found ({img_file}). Terminate program")
-
+        sys.exit()
 
 my_click("file_menu_notepad.png", 10)
 
