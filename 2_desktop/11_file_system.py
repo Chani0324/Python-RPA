@@ -1,2 +1,2 @@
 import os
-print 
+print("빡세네")
